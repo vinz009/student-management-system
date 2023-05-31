@@ -14,4 +14,5 @@
 
 <?php
 echo phpversion();
+phpinfo();
 ?>
