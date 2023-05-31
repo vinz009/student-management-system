@@ -21,6 +21,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d:z
+      - ./mysql/datadir:/var/lib/mysql:z
   phpmyadmin:
     container_name: phpmyadmin-container
     image: phpmyadmin:latest
