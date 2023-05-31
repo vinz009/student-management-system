@@ -1,8 +1,23 @@
 services: 
-  php-apache:
+  web-server:
     container_name: php-likod-serbisyo
     image: php:7.2-apache
     volumes: 
       - .:/var/www/html/
     ports:
       - 8000:80
+  adminer:
+    container_name: adminer-UI
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8080:8080
+
+  db:
+    container_name: mysql-server
+    image: mysql:latest
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d:z
