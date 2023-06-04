@@ -3,7 +3,7 @@ services:
     container_name: php-likod-serbisyo
     image: php:7.2-apache
     volumes: 
-      - .:/var/www/html/
+      - .:/var/www/html/:z
     ports:
       - 8000:80
   adminer:
